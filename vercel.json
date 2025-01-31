@@ -6,10 +6,5 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/index.js" }],
-  "functions": {
-    "index.js": {
-      "includeFiles": "views/**/*.ejs"
-    }
-  }
+  "routes": [{ "src": "/(.*)", "dest": "/index.js" }]
 }
