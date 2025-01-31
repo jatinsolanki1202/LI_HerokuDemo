@@ -4,7 +4,7 @@ const { hashPassword, comparePassword } = require('../utils/bcrypt.js')
 const { createToken, verifyToken } = require('../utils/jwt.js')
 
 async function registerPage(req, res) {
-  res.status(200).render('register')
+  res.status(200).render('/views/register')
 }
 
 async function register(req, res) {
@@ -34,7 +34,7 @@ async function register(req, res) {
 }
 
 async function loginPage(req, res) {
-  res.render('login')
+  res.render('/views/login')
 }
 
 async function login(req, res) {
@@ -56,7 +56,7 @@ async function login(req, res) {
 async function homePage(req, res) {
   try {
     let user = req.user
-    res.status(200).render('home', { user })
+    res.status(200).render('/views/home', { user })
   } catch (err) {
     console.log('error encountered: ', err.message)
   }
@@ -68,7 +68,7 @@ async function logout(req, res) {
 }
 
 function deletePage(req, res) {
-  res.render('deleteProfile')
+  res.render('/views/deleteProfile')
 }
 
 async function deleteProfile(req, res) {
@@ -84,7 +84,7 @@ async function deleteProfile(req, res) {
 }
 
 function updateProfilePage(req, res) {
-  res.render('updateProfile', { user: req.user })
+  res.render('/views/updateProfile', { user: req.user })
 }
 
 async function updateProfile(req, res) {
