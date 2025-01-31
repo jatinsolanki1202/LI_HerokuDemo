@@ -4,7 +4,7 @@ const { hashPassword, comparePassword } = require('../utils/bcrypt.js')
 const { createToken, verifyToken } = require('../utils/jwt.js')
 
 async function registerPage(req, res) {
-  res.status(200).render('../views/register.ejs')
+  res.status(200).render('register.ejs')
 }
 
 async function register(req, res) {
@@ -34,7 +34,7 @@ async function register(req, res) {
 }
 
 async function loginPage(req, res) {
-  res.render('../views/login.ejs')
+  res.render('login.ejs')
 }
 
 async function login(req, res) {
@@ -56,7 +56,7 @@ async function login(req, res) {
 async function homePage(req, res) {
   try {
     let user = req.user
-    res.status(200).render('../views/home.ejs', { user })
+    res.status(200).render('home.ejs', { user })
   } catch (err) {
     console.log('error encountered: ', err.message)
   }
@@ -68,7 +68,7 @@ async function logout(req, res) {
 }
 
 function deletePage(req, res) {
-  res.render('../views/deleteProfile.ejs')
+  res.render('deleteProfile.ejs')
 }
 
 async function deleteProfile(req, res) {
@@ -84,7 +84,7 @@ async function deleteProfile(req, res) {
 }
 
 function updateProfilePage(req, res) {
-  res.render('../views/updateProfile.ejs', { user: req.user })
+  res.render('updateProfile.ejs', { user: req.user })
 }
 
 async function updateProfile(req, res) {
